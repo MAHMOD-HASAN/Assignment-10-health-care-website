@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css'
+import About from './Components/About/About';
 import Footer from './Components/Footer/Footer';
 import HeaderNavbar from './Components/Header/HeaderNavbar';
 import Home from './Components/Home/Home/Home';
-import Login from './Components/Login/Login';
+import LoginRegistration from './Components/LoginRegistration/LoginRegistration';
 import NotFound from './Components/NotFound/NotFound';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ServiceDetailsPage from './Components/ServiceDetailsPage/ServiceDetailsPage';
@@ -39,8 +40,12 @@ const App = () => {
                 <Trainers></Trainers>
             </Route>
 
+            <Route exact path='/about'>
+                <About></About>
+            </Route>
+
             <Route exact path='/login'>
-                <Login></Login>
+                <LoginRegistration></LoginRegistration>
             </Route>
 
             <PrivateRoute exact path='/services/:serviceId'>

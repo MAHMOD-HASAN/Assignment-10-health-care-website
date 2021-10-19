@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import logo from '../../Images/logo.jpg';
 
+
+// this is top Navbar
+
 const HeaderNavbar = () => {
 
     const {user, logOut} = useAuth();
@@ -24,6 +27,7 @@ const HeaderNavbar = () => {
                        <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                        <Nav.Link as={Link} to='/services'>Services</Nav.Link>
                        <Nav.Link as={Link} to='/trainers'>Trainers</Nav.Link>
+                       <Nav.Link as={Link} to='/about'>About</Nav.Link>
 
                        {
                            user.email && <span className='text-light me-3'>Hello {user.displayName}</span>

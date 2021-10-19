@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Services.css'
 
 // all services are here
+// fetch data from fakeData.json(into public folder)
 
 const Services = () => {
 
@@ -18,15 +19,18 @@ const Services = () => {
 
     return (
         <Container className='mt-5 text-center'>
+
             <h1 className='text-danger'>Our Services</h1>
             <small>What we Provide</small>
-            <Row  sm='1' md='2' lg='2' >
+
+            <Row  xs='1' md='2'>
                 {
                   services.map(service => <Service
                      key={service.id}
                      service={service}></Service>)
                 }
             </Row>
+
         </Container>
     );
 };

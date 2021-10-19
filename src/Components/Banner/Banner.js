@@ -4,26 +4,31 @@ import banner1 from '../../Images/banner1.jpg';
 import banner2 from '../../Images/banner2.jpg';
 import banner3 from '../../Images/banner3.jpg';
 
+// this is top banner section (slider also)
+// use three image and image description
+
 const Banner = () => {
     return (
          <Carousel>
                 <Carousel.Item>
+
                     <img
-                    className="d-block w-100"
-                    height ='500'
+                    className="d-block w-100 img-fluid"
                     src={banner1}
                     alt="First slide"
                     />
+
                     <Carousel.Caption>
                     <h1>Keep Your Body <br/>Fit & <span className='text-warning'>Strong</span></h1>
                     <p className='text-warning'>with Fitness BD</p>
                     <Button variant='danger' size='sm' className='btn-sm-block'>More About Health <i className="fas fa-arrow-right"></i></Button>
                     </Carousel.Caption>
+
                 </Carousel.Item>
+
                 <Carousel.Item>
                     <img
-                    className="d-block w-100"
-                    height = '500'
+                    className="d-block w-100 img-fluid"
                     src={banner2}
                     alt="Second slide"
                     />
@@ -33,11 +38,13 @@ const Banner = () => {
                     <p className='text-warning'>with Fitness BD</p>
                     <Button variant='danger' size='sm' className='btn-sm-block'>More About Health <i className="fas fa-arrow-right"></i></Button>
                     </Carousel.Caption>
+
                 </Carousel.Item>
+
                 <Carousel.Item>
+
                     <img
-                    className="d-block w-100"
-                    height = '500'
+                    className="d-block w-100 img-fluid"
                     src={banner3}
                     alt="Third slide"
                     />
@@ -47,8 +54,11 @@ const Banner = () => {
                     <p className='text-warning'>with Fitness BD</p>
                     <Button variant='danger' size='sm' className='btn-sm-block'>More About Health <i className="fas fa-arrow-right"></i></Button>
                     </Carousel.Caption>
+
                 </Carousel.Item>
-    </Carousel>
+
+      </Carousel>
+
     );
 };
 
