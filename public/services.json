@@ -1,0 +1,38 @@
+[
+    {
+      "id": "abc",
+      "name": "Open 24 Hours",
+      "description": "Being a 24/7 gym is one of our best amenities because we can offer our members unrestricted freedom of access from sun up to sun down and everywhere in between. Don't worry worry about cramming in gym time before we close!",
+      "image": "../images/service1.jpg"
+    },
+    {
+      "id": "def",
+      "name": "Personal Training",
+      "description": "At Fitness Bd, our personal trainers are here to help all members seeking to make the most out of their workouts. A personal trainer can help you establish a timeline for realistic goals and break them down into smaller components. ",
+      "image": "../images/service2.jpg"
+    },
+    {
+      "id": "ghi",
+      "name": "Health Care",
+      "description": "At Fitness Bd We have also health care service . Health care is very import for a yoga . that provides medical treatment and care to the public or to a particular group. the cost-effective delivery of health services to remote areas.",
+      "image": "../images/service3.jpg"
+    },
+    {
+      "id": "jkl",
+      "name": "Yoga Classes",
+      "description": "At Fitness Bd, we understand that life can get busy and tiring. That is why we have so many different classes available to you from sun rise to sun set. In the recent years, yoga has gained a huge following and has increased in popularity.",
+      "image": "../images/service4.jpg"
+    },
+    {
+      "id": "mno",
+      "name": "Cycle Studio",
+      "description": "Whether you miss an avid road cycling or just eager to test out a class for the first time, Fitness Bd cycle studio has you covered! Our spacious cycle room is equipped with 40 cycle making it easy to cater to everyone’s indoor cycling needs.",
+      "image": "../images/service5.jpg"
+    },
+    {
+      "id": "pqr",
+      "name": "Weight Equipment",
+      "description": "We have also weight equipment. It is very important for a man weight ligting.Exercise equipment is any apparatus or device used during physical activity to enhance the strength or conditioning effects of that exercise.",
+      "image": "../images/service6.jpg"
+    }
+  ]
