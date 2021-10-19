@@ -1,16 +1,19 @@
-
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import { useLocation, useHistory } from 'react-router-dom';
+import firebaseInitialize from '../../Firebase/ConfigAndInit';
 import useAuth from '../../Hooks/useAuth';
 
-const LoginRegistration = () => {
 
+firebaseInitialize();
+const Login = () => {
+    const auth = getAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirec_uri = location?.state?.from || '/home';
+    const redirec_uri = location.state?.from || '/home';
 
-    const { signInUsingGoogle, signInUsingEmailPassword, registerNewUser } = useAuth();
+    const { signInUsingGoogle } = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -30,27 +33,31 @@ const LoginRegistration = () => {
         setPassword(e.target.value);
     }
     const toggleLogin = e => {
-        setIsLogin(e.target.checked);
+        setIsLogin(e.target.value);
     }
 
-    const handleLoginRegistration = e => {
+    const handleRegistration = e => {
         e.preventDefault();
-        console.log(email, password);
-        if (password.length < 6) {
-            setError('Password Must be at least 6 characters long.');
+        if(password.length < 6) {
+            setError('password must be atleast 6 catacter')
             return;
         }
-        if (!/(?=.*[A-Z])/.test(password)) {
-            setError('Password must contains a Upper case latter')
+        if(!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            setError('use 2 uppercase');
             return;
         }
-
-        isLogin ? signInUsingEmailPassword(email, password) : registerNewUser(email, password);
-
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            history.push(redirec_uri)
+            setError('');
+        })
+       .catch(error => {
+           setError(error.message);
+       })
     }
 
     return (
-        <Form className='px-3 mb-4' onSubmit={handleLoginRegistration}>
+        <Form className='px-3 mb-4'>
         <Row className='justify-content-center mt-5'>
             <Col lg='5' className='bg-warning py-4 rounded'>
                 <h1>Please {isLogin ? 'Login' : 'Register'}</h1>
@@ -63,11 +70,12 @@ const LoginRegistration = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
                 </Form.Group>
+                <p className='text-danger'>{error}</p>
 
-                <Form.Check onChange={toggleLogin} type="checkbox" label="Check me out" />
+                <Form.Check onChange={toggleLogin} type="checkbox" label="Already registerd" />
 
-                <Button onClick={signInUsingEmailPassword} variant='primary' size='sm' className='my-2'>
-                   { isLogin ? 'Login' : 'Register'}
+                <Button onClick={handleRegistration} variant='primary' size='sm' className='my-2'>
+                   {isLogin ? 'Login' : 'Register'}
                 </Button>
                 <br /> 
                 <Button
@@ -82,4 +90,4 @@ const LoginRegistration = () => {
     );
 };
 
-export default LoginRegistration;
+export default Login;

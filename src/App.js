@@ -4,7 +4,7 @@ import About from './Components/About/About';
 import Footer from './Components/Footer/Footer';
 import HeaderNavbar from './Components/Header/HeaderNavbar';
 import Home from './Components/Home/Home/Home';
-import LoginRegistration from './Components/LoginRegistration/LoginRegistration';
+import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ServiceDetailsPage from './Components/ServiceDetailsPage/ServiceDetailsPage';
@@ -45,7 +45,7 @@ const App = () => {
             </Route>
 
             <Route exact path='/login'>
-                <LoginRegistration></LoginRegistration>
+                <Login></Login>
             </Route>
 
             <PrivateRoute exact path='/services/:serviceId'>

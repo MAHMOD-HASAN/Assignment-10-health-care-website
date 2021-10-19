@@ -30,7 +30,7 @@ const HeaderNavbar = () => {
                        <Nav.Link as={Link} to='/about'>About</Nav.Link>
 
                        {
-                           user.email && <span className='text-light me-3'>Hello {user.displayName}</span>
+                           user.email && <span className='text-light me-3'>{user.email}</span>
                        }
 
                        {
