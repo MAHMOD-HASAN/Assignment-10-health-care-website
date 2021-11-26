@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Services.css'
 
 // all services are here
 // fetch data from fakeData.json(into public folder)
